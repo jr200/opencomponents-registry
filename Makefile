@@ -74,7 +74,6 @@ chart-deps:
 chart-install: chart-deps
 	helm upgrade -n $(K8S_NAMESPACE) opencomponents-registry \
 		--install \
-		--set vault-actions.bootstrapToken=$(VAULT_TOKEN) \
 		-f $(VALUES_PATH) \
 		charts/opencomponents-registry
 
@@ -84,7 +83,6 @@ chart-install: chart-deps
 .PHONY: chart-template
 chart-template: chart-deps
 	helm template -n $(K8S_NAMESPACE) opencomponents-registry \
-		--set vault-actions.bootstrapToken=$(VAULT_TOKEN) \
 		-f $(VALUES_PATH) \
 		--debug \
 		charts/opencomponents-registry
@@ -100,5 +98,4 @@ chart-dry-run:
 		--generate-name \
 		--dry-run \
 		--debug \
-		--set vault-actions.bootstrapToken=$(VAULT_TOKEN) \
 		charts/opencomponents-registry

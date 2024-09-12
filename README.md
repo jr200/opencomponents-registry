@@ -20,7 +20,13 @@ s3cmd put ./components.json s3://oc-registry/components/components.json && \
 rm components.json
 ```
 
-Setup the appropriate config options in the `values.yaml`.
+Setup the appropriate config options in the `values.yaml`, and install using helm.
+
+```
+helm repo add jr200 https://jr200.github.io/helm-charts/
+helm repo update
+helm install -f values.yaml my-oc-registry jr200/opencomponents-registry
+```
 
 # Helm Chart Values Configuration
 
