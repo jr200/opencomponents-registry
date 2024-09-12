@@ -1,0 +1,13 @@
+.env
+.env.*
+.github
+.history
+.next
+.vscode
+*.bak
+*.swp
+charts
+Makefile
+node_modules
+npm-debug.log
+private
